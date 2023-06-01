@@ -113,7 +113,7 @@ elseif ($a == 'reorder' && $_SERVER['REQUEST_METHOD'] == 'POST')
 
 cot_sendheaders('application/json', att_ajax_get_status($response_code));
 
-if (!is_null($response))
+if (isset($response) && !is_null($response)) 
 	echo json_encode($response);
 
 /**

@@ -273,7 +273,7 @@ function att_ajax_handle_file_upload($uploaded_file, $name, $size, $type, $error
 				// Fix image orientation via EXIF if possible
 				if (function_exists('exif_read_data'))
 				{
-					$exif = @exif_read_data($file_path);
+					$exif = exif_read_data($file_path);
 					list($width, $height) = getimagesize($file_path);
 					$size_ok = function_exists('cot_img_check_memory') ? cot_img_check_memory($file_path, (int)ceil($width * $height * 4 / 1048576)) : true;
 					if ($size_ok && isset($exif['Orientation']) && !empty($exif['Orientation']) && in_array($exif['Orientation'], array(3, 6, 8)))
@@ -345,7 +345,7 @@ function att_ajax_handle_file_upload($uploaded_file, $name, $size, $type, $error
 // Validates uploaded file
 function att_ajax_validate($uploaded_file, $file, $error)
 {
-	global $area, $item, $L;
+	global $area, $item, $L, $cfg;
 
 	if(!cot_auth('plug', 'attach2', 'W'))
 	{
@@ -410,8 +410,9 @@ function att_ajax_validate($uploaded_file, $file, $error)
 }
 
 // workaround for splitting basename whith beginning utf8 multibyte char
-function mb_basename($filepath, $suffix = NULL)
+function mb_basename($filepath, $suffix = '')
 {
+
 	$splited = preg_split('/\//', rtrim($filepath, '/ '));
 	return substr(basename('X' . $splited[count($splited) - 1], $suffix), 1);
 }

@@ -446,9 +446,7 @@ function att_remove_all($user_id = null, $area = null, $item_id = null)
 		unlink($row['att_path']);
 		att_remove_thumbs($row['att_id']);
 		rmdir($cfg['plugin']['attach2']['folder'] . '/_thumbs/' . $row['att_id']);
-		@rmdir($cfg['plugin']['attach2']['folder'] . '/' . $row['att_area'] . '/' . $row['att_item']);
 	}
-	@rmdir($cfg['plugin']['attach2']['folder'] . '/' . $row['att_area']);
 	$db->delete($db_attach, $where);
 
 	return $count;
@@ -608,7 +606,7 @@ function att_get($area, $item, $column = '', $number = 'first')
 			ORDER BY $order_by
 			LIMIT $offset 1", array($area, (int)$item))->fetch();
 	}
-	return empty($column) ? $a_cache[$area][$item][$number] : $a_cache[$area][$item][$number]['att_' . $column];
+	return empty($column) ? $a_cache[$area][$item][$number] : ( is_array( $a_cache[$area][$item][$number] ) ? $a_cache[$area][$item][$number]['att_' . $column] : false);
 }
 
 /**
@@ -786,7 +784,7 @@ function att_cot_thumb($source, $target, $width, $height, $resize = 'crop', $qua
 			}
 		}
 
-		$newimage = imagecreatetruecolor($width, $height); //
+		$newimage = imagecreatetruecolor((int)$width, (int)$height); //
 	}
 
 	switch ($ext)
@@ -804,7 +802,7 @@ function att_cot_thumb($source, $target, $width, $height, $resize = 'crop', $qua
 			break;
 	}
 
-	imagecopyresampled($newimage, $oldimage, $x_pos, $y_pos, 0, 0, $width, $height, $width_orig, $height_orig);
+	imagecopyresampled($newimage, $oldimage, (int)$x_pos, (int)$y_pos, 0, 0, (int)$width, (int)$height, (int)$width_orig, (int)$height_orig);
 
 	switch ($ext)
 	{
