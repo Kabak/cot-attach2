@@ -16,7 +16,7 @@ Thanks to his work you could use that good plugin again
 
 
 ## Usage at forum
-<code>
+```php
 // Attach to forum post
 {FORUMS_POSTS_ROW_ID|att_widget('forums',$this,'attach2.link')}
 
@@ -26,26 +26,26 @@ Thanks to his work you could use that good plugin again
 {FORUMS_POSTS_ROW_ID|att_downloads('forums',$this)} //  for downloading not picture
 
 // 1000*600 picture<p>&lt; img src="{FORUMS_POSTS_ROW_ID|att_get('forums',$this)|att_thumb($this,1000,600,height)}" alt="{FORUMS_POSTS_ROW_ID|att_get('posts',$this,'title')}" class="img-fluid"/&gt;</p>
-</code>
+```
 
 ## Usage at Pages
-<code>
+```php
 // Attach to page
 {PAGE_ID|att_widget('page',$this,'attach2.link')}
 
 // Display at page 
-    {PAGE_ID|att_display('page',$this)}   //  All by attach list queue
-    {PAGE_ID|att_gallery('page',$this)}   //  gallery
-    {PAGE_ID|att_downloads('page',$this)} //  for downloading not picture
-</code>
+{PAGE_ID|att_display('page',$this)}   //  All by attach list queue
+{PAGE_ID|att_gallery('page',$this)}   //  gallery
+{PAGE_ID|att_downloads('page',$this)} //  for downloading not picture
+```
 
 ## Usage at Comments
-<code>
+```php
 // Attach to comment
 {COMMENTS_ROW_ID|att_widget('comments',$this,'attach2.link')} 
 
 // Display at Comment
-    {COMMENTS_ROW_ID|att_display('comments',$this)}     //  All by attach list queue
-    {COMMENTS_ROW_ID|att_gallery('comments',$this)}     //  gallery
-    {COMMENTS_ROW_ID|att_downloads('comments',$this)}   //  for downloading not picture
-</code>
+{COMMENTS_ROW_ID|att_display('comments',$this)}     //  All by attach list queue
+{COMMENTS_ROW_ID|att_gallery('comments',$this)}     //  gallery
+{COMMENTS_ROW_ID|att_downloads('comments',$this)}   //  for downloading not picture
+```
