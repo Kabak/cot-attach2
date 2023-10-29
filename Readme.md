@@ -15,6 +15,23 @@ Thanks to them work you could use that good plugin again
 [Pavlo Tkachenko](https://github.com/Dayver) ([Dayver](https://www.cotonti.com/users/Dayver)),
 [Kabak](https://github.com/Kabak) ([Kabak](https://www.cotonti.com/users/Kabak))
 
+ ## Features
+
+- Modern upload dialog based on jQuery File Upload.
+- Multi-upload support.
+- Easy integration via TPL callbacks.
+- Built-in gallery based on Lightbox 2.
+- File downloads are counted and provided with original file names.
+- Configurable on-the-fly thumbnail generation.
+- Special BBcodes to paste images into content regardless of parser.
+
+## Installation
+
+- Download the plugin and extract "attach2" folder into your Cotonti plugins folder.
+- Go to Administration / Extensions and install the Attachments plugin.
+- Enter plugin Configuration and set the proper defaults there.
+- Create the "Directory for files" on your host (by default it is "datas/attach") and make it writable for PHP (e.g. CHMOD 775 or CHMOD 777).
+
 
 ## Usage at forum
 ```php
