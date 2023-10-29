@@ -1,18 +1,19 @@
-## Attachments 2 for Cotonti
+Attachments 2 for Cotonti
+=========================
 
 With this plugin you can attach files and images to any Cotonti objects including pages, forum posts and organize them into galleries or downloads.
 
-## Cotonti Rev. 
-- 0.9.22 supported
-- PHP 8.1 
+Author: [Vladimir Sibirov](https://github.com/trustmaster) ([Trustmaster](https://www.cotonti.com/users/Trustmaster))
 
-## Thanks to Pavlo Tkachenko
-Thanks to his work you could use that good plugin again
-[Pavlo Tkachenko](https://github.com/Dayver)
+Plugin page and documentstion: https://www.cotonti.com/en/extensions/files-media/attach2
 
+Forum discussion: https://www.cotonti.com/forums?m=posts&q=9217 (Russian)
 
-## Forum
-[Forum](https://www.cotonti.com/forums?m=posts&q=9217)
+## Thanks
+
+Thanks to them work you could use that good plugin again 
+[Pavlo Tkachenko](https://github.com/Dayver) ([Dayver](https://www.cotonti.com/users/Dayver)),
+[Kabak](https://github.com/Kabak) ([Kabak](https://www.cotonti.com/users/Kabak))
 
 
 ## Usage at forum
